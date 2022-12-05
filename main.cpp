@@ -1,15 +1,8 @@
 
-//                   HEADER FILE USED IN PROJECT
-
-
 #include<iostream>
 #include<fstream>
 #include<iomanip>
 using namespace std;
-
-
-
-//                   CLASS USED IN PROJECT
 
 
 class student
@@ -85,11 +78,6 @@ int  student::retrollno() const
 	return rollno;
 }
 
-
-
-//    	function declaration
-
-
 void write_student();	//write the record in binary file
 void display_all();	//read all records from binary file
 void display_sp(int);	//accept rollno and read record from binary file
@@ -99,11 +87,6 @@ void class_result();	//display all records in tabular format from binary file
 void result();		//display result menu
 void intro();		//display welcome screen
 void entry_menu();	//display entry menu on screen
-
-
-
-//    	THE MAIN FUNCTION OF PROGRAM
-
 
 
 int main()
@@ -136,8 +119,6 @@ int main()
 }
 
 
-//    	function to write in file
-
 
 void write_student()
 {
@@ -145,7 +126,7 @@ void write_student()
 	ofstream outFile;
 	outFile.open("student.dat",ios::binary|ios::app);
 	st.getdata();
-	outFile.write(reinterpret_cast<char *> (&st), sizeof(student));/*It is used to convert a pointer of some data type into a pointer of another data type,
+	outFile.write(reinterpret_cast<char *> (&st), sizeof(student)); /*It is used to convert a pointer of some data type into a pointer of another data type,
 	                                                                 even if the data types before and after conversion are different.
 	                                                                It does not check if the pointer type and data pointed by the pointer is same or not.*/
 	outFile.close();
@@ -155,7 +136,6 @@ void write_student()
 }
 
 
-//    	function to read all records from file
 
 
 void display_all()
@@ -180,9 +160,6 @@ void display_all()
 	cin.ignore();
 	cin.get();
 }
-
-
-//    	function to read specific record from file
 
 
 void display_sp(int n)
@@ -214,7 +191,7 @@ void display_sp(int n)
 }
 
 
-//    	function to modify record of file
+
 
 
 void modify_student(int n)
@@ -254,9 +231,6 @@ void modify_student(int n)
 }
 
 
-//    	function to delete record of file
-
-
 void delete_student(int n)
 {
 	student st;
@@ -289,9 +263,6 @@ void delete_student(int n)
 }
 
 
-//    	function to display all students grade report
-
-
 void class_result()
 {
 	student st;
@@ -318,8 +289,6 @@ void class_result()
 }
 
 
-//    	function to display result menu
-
 
 void result()
 {
@@ -344,7 +313,7 @@ void result()
 }
 
 
-//    	INTRODUCTION FUNCTION
+
 
 
 void intro()
@@ -352,13 +321,13 @@ void intro()
 	cout<<"\n\n\n\t\t  STUDENT";
 	cout<<"\n\n\t\tREPORT CARD";
 	cout<<"\n\n\t\t  PROJECT";
-	cout<<"\n\n\n\tMADE BY : anshul rohit and vansh";
+	cout<<"\n\n\n\tMADE BY : Anshul, Rohit & Vansh";
 	cout<<"\n\t Institution: NMIMS";
 	cin.get();
 }
 
 
-//    	ENTRY / EDIT MENU FUNCTION
+
 
 
 void entry_menu()
@@ -391,4 +360,3 @@ void entry_menu()
 	}
 }
 
-//    		END OF PROJECT
