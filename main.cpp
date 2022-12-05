@@ -83,9 +83,9 @@ int  student::retrollno() const
 }
 
 
-//*********************
+
 //    	function declaration
-//**********************
+
 
 void write_student();	//write the record in binary file
 void display_all();	//read all records from binary file
@@ -98,9 +98,7 @@ void intro();		//display welcome screen
 void entry_menu();	//display entry menu on screen
 
 
-//*********************
-//    	THE MAIN FUNCTION OF PROGRAM
-//**********************
+
 
 
 int main()
@@ -132,9 +130,7 @@ int main()
 	return 0;
 }
 
-//*********************
-//    	function to write in file
-//**********************
+
 
 void write_student()
 {
@@ -149,9 +145,6 @@ void write_student()
 	cin.get();
 }
 
-//*********************
-//    	function to read all records from file
-//**********************
 
 void display_all()
 {
@@ -176,9 +169,7 @@ void display_all()
 	cin.get();
 }
 
-//*********************
-//    	function to read specific record from file
-//**********************
+
 
 void display_sp(int n)
 {
@@ -208,9 +199,6 @@ void display_sp(int n)
 	cin.get();
 }
 
-//*********************
-//    	function to modify record of file
-//**********************
 
 void modify_student(int n)
 {
@@ -248,9 +236,6 @@ void modify_student(int n)
 	cin.get();
 }
 
-//*********************
-//    	function to delete record of file
-//**********************
 
 void delete_student(int n)
 {
@@ -283,9 +268,7 @@ void delete_student(int n)
 	cin.get();
 }
 
-//*********************
-//    	function to display all students grade report
-//**********************
+
 
 void class_result()
 {
