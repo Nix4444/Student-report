@@ -1,4 +1,7 @@
 
+//                   HEADER FILE USED IN PROJECT
+
+
 #include<iostream>
 #include<fstream>
 #include<iomanip>
@@ -6,7 +9,7 @@ using namespace std;
 
 
 
-//Classes used in project:
+//                   CLASS USED IN PROJECT
 
 
 class student
@@ -22,7 +25,7 @@ public:
 	void showdata() const;	//function to show data on screen
 	void show_tabular() const;
 	int retrollno() const;
-}; 
+}; //class ends here
 
 
 void student::calculate()
@@ -40,20 +43,20 @@ void student::calculate()
 
 void student::getdata()
 {
-	cout<<"\nEnter the roll number of student ";
+	cout<<"\nEnter The roll number of student ";
 	cin>>rollno;
-	cout<<"\n\nEnter the name of student ";
+	cout<<"\n\nEnter The Name of student ";
 	cin.ignore();
 	cin.getline(name,50);
-	cout<<"\nEnter the marks in physics out of 100 : ";
+	cout<<"\nEnter The marks in physics out of 100 : ";
 	cin>>p_marks;
-	cout<<"\nEnter the marks in chemistry out of 100 : ";
+	cout<<"\nEnter The marks in chemistry out of 100 : ";
 	cin>>c_marks;
-	cout<<"\nEnter the marks in maths out of 100 : ";
+	cout<<"\nEnter The marks in maths out of 100 : ";
 	cin>>m_marks;
-	cout<<"\nEnter the marks in english out of 100 : ";
+	cout<<"\nEnter The marks in english out of 100 : ";
 	cin>>e_marks;
-	cout<<"\nEnter the marks in computer science out of 100 : ";
+	cout<<"\nEnter The marks in computer science out of 100 : ";
 	cin>>cs_marks;
 	calculate();
 }
@@ -99,12 +102,14 @@ void entry_menu();	//display entry menu on screen
 
 
 
+//    	THE MAIN FUNCTION OF PROGRAM
+
 
 
 int main()
 {
 	char ch;
-	cout.setf(ios::fixed|ios::showpoint);
+	cout.setf(ios::fixed|ios::showpoint); //pipe command to execute/connect 2 processes
 	cout<<setprecision(2); // program outputs decimal number to two decimal places
 	intro();
 	do
@@ -131,6 +136,8 @@ int main()
 }
 
 
+//    	function to write in file
+
 
 void write_student()
 {
@@ -138,12 +145,17 @@ void write_student()
 	ofstream outFile;
 	outFile.open("student.dat",ios::binary|ios::app);
 	st.getdata();
-	outFile.write(reinterpret_cast<char *> (&st), sizeof(student));
+	outFile.write(reinterpret_cast<char *> (&st), sizeof(student));/*It is used to convert a pointer of some data type into a pointer of another data type,
+	                                                                 even if the data types before and after conversion are different.
+	                                                                It does not check if the pointer type and data pointed by the pointer is same or not.*/
 	outFile.close();
     	cout<<"\n\nStudent record Has Been Created ";
 	cin.ignore();
 	cin.get();
 }
+
+
+//    	function to read all records from file
 
 
 void display_all()
@@ -154,7 +166,7 @@ void display_all()
 	if(!inFile)
 	{
 		cout<<"File could not be open !! Press any Key...";
-		cin.ignore();
+		cin.ignore(); //buffer memory clear
 		cin.get();
 		return;
 	}
@@ -169,6 +181,8 @@ void display_all()
 	cin.get();
 }
 
+
+//    	function to read specific record from file
 
 
 void display_sp(int n)
@@ -198,6 +212,9 @@ void display_sp(int n)
 	cin.ignore();
 	cin.get();
 }
+
+
+//    	function to modify record of file
 
 
 void modify_student(int n)
@@ -237,6 +254,9 @@ void modify_student(int n)
 }
 
 
+//    	function to delete record of file
+
+
 void delete_student(int n)
 {
 	student st;
@@ -269,6 +289,8 @@ void delete_student(int n)
 }
 
 
+//    	function to display all students grade report
+
 
 void class_result()
 {
@@ -295,9 +317,9 @@ void class_result()
 	inFile.close();
 }
 
-//*********************
+
 //    	function to display result menu
-//**********************
+
 
 void result()
 {
@@ -321,25 +343,29 @@ void result()
 	}
 }
 
-//*********************
+
 //    	INTRODUCTION FUNCTION
-//**********************
+
 
 void intro()
 {
-	//TO BE MADE LATER
+	cout<<"\n\n\n\t\t  STUDENT";
+	cout<<"\n\n\t\tREPORT CARD";
+	cout<<"\n\n\t\t  PROJECT";
+	cout<<"\n\n\n\tMADE BY : anshul rohit and vansh";
+	cout<<"\n\t Institution: NMIMS";
 	cin.get();
 }
 
-//*********************
+
 //    	ENTRY / EDIT MENU FUNCTION
-//**********************
+
 
 void entry_menu()
 {
 	char ch;
 	int num;
-	system("cls");
+	system("cls"); //screen clear 
 	cout<<"\n\n\n\tENTRY MENU";
 	cout<<"\n\n\t1.CREATE STUDENT RECORD";
 	cout<<"\n\n\t2.DISPLAY ALL STUDENTS RECORDS";
@@ -365,6 +391,4 @@ void entry_menu()
 	}
 }
 
-//*********************
-//    			END OF PROJECT
-//*********************
+//    		END OF PROJECT
